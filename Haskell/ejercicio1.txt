@@ -1,0 +1,40 @@
+1. Verificar como evalua Hugs las siguientes expresiones:
+(a) (2 + 3)
+Haskell evaluaría esto como 5.
+
+(b) $$ − 1
+No está claro lo que significa $$ en este contexto, pero si asumimos que es una variable o función definida previamente, 
+Hugs intentaría evaluarla y restaría 1. Si $$ no está definido, habría un error de sintaxis.
+
+(c) (+) 5 8
+Esto sería evaluado como 13, ya que es una función infija + aplicada a los argumentos 5 y 8.
+
+(d) 5 − 4 − 3
+Haskell evaluaría esto como -2, ya que asocia de izquierda a derecha y realiza la resta en el orden en que aparece.
+
+(e) 7 / 3
+Esto se evaluaría como 2.3333333, ya que realiza la división de números de punto flotante.
+
+(f) 7 div 3
+Esto se evaluaría como 2, ya que div es la división entera y descarta el residuo.
+
+(g) 4 div $$
+evaluaría la división entera de 4 por el valor de $$.
+
+(h) 7 mod 3
+Esto se evaluaría como 1, ya que mod calcula el residuo de la división entera.
+
+(i) True || False
+Esto se evaluaría como True.
+
+(j) even 9
+Esto se evaluaría como False, 9 es impar.
+
+(k) succ 6
+Esto se evaluaría como 7, ya que succ devuelve el sucesor de un número.
+
+(l) succ (pred 6)
+Esto también se evaluaría como 6.
+
+(m) gcd 21 27
+Esto se evaluaría como 3, ya que gcd calcula el máximo común divisor de dos números.
