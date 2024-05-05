@@ -1,0 +1,6 @@
+ordenTriple :: (Int,Int,Int) -> (Int, Int,Int)
+ordenTriple (x,y,z)
+    | x > y     = ordenTriple(y,x,z)
+    | y > z     = ordenTriple(x,z,y)
+    | x > z     = ordenTriple(z,y,x)
+    | otherwise = (x,y,z)
