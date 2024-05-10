@@ -5,10 +5,11 @@
 Write your code in this editor and press "Run" button to execute it.
 
 }
-{
+{kkk
  A partir de una funcion denominada expo, con los parametros x y n devuelva el valor de x
 elevado a la n, donde x es un numero real y n entero.  
 }
+
 
 PROGRAM Ejercicio11;
 VAR n:integer; x:double;
