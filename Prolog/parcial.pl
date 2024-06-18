@@ -39,3 +39,13 @@ elemento2(0, L, 0).
 elemento2(K, [H | T], R) :- K > 0, K2 is K - 1, elemento2(K2, T, R2), R is R2 + H.
 elemento2(K, [H], H) :- K > 0. %caso especial donde K > LONG(L)
 
+
+% cuantoN([1, 2, 1, 5, 1, 3, 3, 7], R). -> R = [[1, 3], [2, 1], [5, 1], [3, 2], [7,1]]
+
+cuantoN([], []).
+cuantoN([H | T], [[H, Cant] | R]) :- cantOcur(H, [H | T], Cant, R1), cuantoN(R1, R). 
+
+% cuenta las ocurrencias de un H mientras hace una lista sin este elemento
+cantOcur(H, [], 0, []).  % caso base: 1 ocurrencia en la lista
+cantOcur(H, [H | T], Cant, R) :- cantOcur(H, T, Cant2, R), Cant is Cant2 + 1.  % ocurrencia, no lo agrego a la lista
+cantOcur(H, [Y | T], Cant, [Y | R]) :- H \= Y, cantOcur(H, T, Cant, R). 
